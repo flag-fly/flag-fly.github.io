@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>艰难的第一步</title>
+  <icon>https://flag-fly.github.io/icon.png</icon>
+  
+  <link href="https://flag-fly.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://flag-fly.github.io/"/>
+  <updated>2020-10-03T03:55:44.765Z</updated>
+  <id>https://flag-fly.github.io/</id>
+  
+  <author>
+    <name>QiWu</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>“first”</title>
+    <link href="https://flag-fly.github.io/2020/10/03/%E2%80%9Cfirst%E2%80%9D/"/>
+    <id>https://flag-fly.github.io/2020/10/03/%E2%80%9Cfirst%E2%80%9D/</id>
+    <published>2020-10-03T03:55:44.000Z</published>
+    <updated>2020-10-03T03:55:44.765Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://flag-fly.github.io/2020/10/02/hello-world/"/>
+    <id>https://flag-fly.github.io/2020/10/02/hello-world/</id>
+    <published>2020-10-02T07:26:59.156Z</published>
+    <updated>2020-10-02T07:26:59.156Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
