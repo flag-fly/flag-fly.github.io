@@ -1,0 +1,247 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>国庆节的第二篇 - 艰难的第一步</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="FDTD,"> 
+    <meta name="description" content="国庆节的第五天今天看了许久麦克斯韦方程组，写点看到的东西。
+广义麦克斯韦方程组先亮明麦克斯韦方程组：
+
+\begin{aligned}
+\vec{\nabla} \cdot \vec{D} &amp;=\r,"> 
+    <meta name="author" content="QiWu"> 
+    <link rel="alternative" href="atom.xml" title="艰难的第一步" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">艰难的第一步</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="https://flag-fly.github.io"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">国庆节的第二篇</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">国庆节的第二篇</h1>
+        <div class="stuff">
+            <span>十月 03, 2020</span>
+            
+
+        </div>
+        <div class="content markdown">
+            <h1 id="国庆节的第五天"><a href="#国庆节的第五天" class="headerlink" title="国庆节的第五天"></a>国庆节的第五天</h1><p>今天看了许久麦克斯韦方程组，写点看到的东西。</p>
+<h2 id="广义麦克斯韦方程组"><a href="#广义麦克斯韦方程组" class="headerlink" title="广义麦克斯韦方程组"></a>广义麦克斯韦方程组</h2><p>先亮明麦克斯韦方程组：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\vec{\nabla} \cdot \vec{D} &=\rho \\
+\vec{\nabla} \cdot \vec{B} &=\rho_m \\
+\vec{\nabla} \times \vec{H} &=\vec{\jmath}+\frac{\partial \vec{D}}{\partial t} \\
+\vec{\nabla} \times \vec{E} &=-\vec{\jmath}_m-\frac{\partial \vec{B}}{\partial t}
+\end{aligned}</script><p>这里多出来的$\rho_m$、$J_m$ 是磁荷密度、磁流密度（假设存在），这是广义麦克斯韦方程组里面引入的一个概念，对应于电荷密度和电流密度，对于其是否存在，物理界现在还有争议，但是不妨碍我们引入电荷密度和磁流密度，因为这可以大大简化我们对电磁场的计算。广义麦克斯韦方程组存在明显的对称性，我们只需求出其中电场（磁场），那么对应的磁场（电场）也能由对称性得出。</p>
+<h2 id="对麦克斯韦旋度方程的思考"><a href="#对麦克斯韦旋度方程的思考" class="headerlink" title="对麦克斯韦旋度方程的思考"></a>对麦克斯韦旋度方程的思考</h2><p>我们知道，麦克斯韦的散度方程可以解释电场和磁场的部分特性，比如电场在$\rho$不等于0的时候可以解释成有源场，也就是说电场线有起点或者有终点，另一端延申至无穷。磁场的话暂时没有发现磁荷，故都是无源场，也就说，磁场线是闭合曲线，有始有终。  </p>
+<p> 其实啊，我觉得麦克斯韦的旋度方程更能体现电磁场的精髓，这两个方程很明显的体现了电生磁，磁生电的特性。并且，散度方程可以由这两个旋度方程推出了。这也就是说我们在求解电磁场的时候，可能只需要电场强度和磁场强度满足旋度方程就可以了。做一个简单的数学推导证明一下：</p>
+<script type="math/tex; mode=display">
+\vec{\nabla} \cdot {\vec{\nabla} \times \vec{H}} =\vec{\nabla} \cdot{\vec{\jmath}}+\vec{\nabla} \cdot{\frac{\partial \vec{D}}{\partial t}}</script><p>数学上我们很容易得知左边磁场强度旋度的散度为0，右边的算式第一项，用电流连续性原理可得：</p>
+<script type="math/tex; mode=display">
+\vec{\nabla} \cdot{\vec{\jmath}}=-\frac{\partial \vec{\rho}}{\partial t}</script><p>此时得到方程：</p>
+<script type="math/tex; mode=display">
+0=-\frac{\partial \vec{\rho}}{\partial t}+\frac{\partial \vec{\nabla} \cdot\vec{D}}{\partial t}</script><p>最后得到麦克斯韦散度方程：</p>
+<script type="math/tex; mode=display">
+\vec{\nabla} \cdot \vec{D} =\rho</script><p>另一个推导也是同理。这对我们之后运用计算机求解电磁场有着极大的意义，也就是说电场和磁场只需要满足两个旋度方程就可以求出场的分布。（当然，源和边界条件要知道）</p>
+<h1 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h1><p><strong>散度</strong>： $\nabla$ 与一个矢量函数点积的结果；</p>
+<script type="math/tex; mode=display">
+\nabla \cdot \vec{A}=\frac{\partial A_{x}}{\partial x}+\frac{\partial A_{y}}{\partial y}+\frac{\partial A_{z}}{\partial z}</script><p><strong>旋度</strong>： $\nabla$与一个矢量函数叉积的结果；</p>
+<script type="math/tex; mode=display">
+\nabla \times \vec{A}=\left|\begin{array}{ccc}
+\hat{i} & \hat{j} & \hat{k} \\
+\frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
+A_{x} & A_{y} & A_{z}
+\end{array}\right|</script><script type="math/tex; mode=display">
+\nabla \times \vec{A}=\left(\frac{\partial A_{z}}{\partial y}-\frac{\partial A_{y}}{\partial z}\right) \hat{i}-\left(\frac{\partial A_{z}}{\partial x}-\frac{\partial A_{x}}{\partial z}\right) \hat{j}+\left(\frac{\partial A_{y}}{\partial x}-\frac{\partial A_{x}}{\partial y}\right) \hat{k}</script><p>贴个图<br><img src="https://cdn.jsdelivr.net/gh/flag-fly/cdn/img/2020-10-05-21-15-11.png" alt=""></p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='true'
+        data-ae='true'
+        data-ci='7f0bcdbef4489f682fb8'
+        data-cs='e389e53d9c5c35ad8947c140a7711163cb63e170'
+        data-r='gitalk'
+        data-o='flag-fly'
+        data-a='flag-fly'
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+        <div class='side'>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%BD%E5%BA%86%E8%8A%82%E7%9A%84%E7%AC%AC%E4%BA%94%E5%A4%A9"><span class="toc-number">1.</span> <span class="toc-text">国庆节的第五天</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B9%BF%E4%B9%89%E9%BA%A6%E5%85%8B%E6%96%AF%E9%9F%A6%E6%96%B9%E7%A8%8B%E7%BB%84"><span class="toc-number">1.1.</span> <span class="toc-text">广义麦克斯韦方程组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E9%BA%A6%E5%85%8B%E6%96%AF%E9%9F%A6%E6%97%8B%E5%BA%A6%E6%96%B9%E7%A8%8B%E7%9A%84%E6%80%9D%E8%80%83"><span class="toc-number">1.2.</span> <span class="toc-text">对麦克斯韦旋度方程的思考</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%99%84%E5%BD%95"><span class="toc-number">2.</span> <span class="toc-text">附录</span></a></li></ol>	
+        </div>
+    
+</div>
+
+
+    </div>
+</div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+        tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
+        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+        messageStyle: "none"
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+
+</html>
