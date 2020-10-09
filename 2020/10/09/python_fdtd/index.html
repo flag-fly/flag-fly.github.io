@@ -1,0 +1,223 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>working day - 艰难的第一步</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="FDTD,"> 
+    <meta name="description" content="python中数组计算有用的函数numpy库NumPy(Numerical Python) 是 Python 语言的一个扩展程序库，支持大量的维度数组与矩阵运算，此外也针对数组运算提供大量的数学函数,"> 
+    <meta name="author" content="QiWu"> 
+    <link rel="alternative" href="atom.xml" title="艰难的第一步" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">艰难的第一步</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="https://flag-fly.github.io"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">working day</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">working day</h1>
+        <div class="stuff">
+            <span>十月 09, 2020</span>
+            
+
+        </div>
+        <div class="content markdown">
+            <h1 id="python中数组计算有用的函数"><a href="#python中数组计算有用的函数" class="headerlink" title="python中数组计算有用的函数"></a>python中数组计算有用的函数</h1><h2 id="numpy库"><a href="#numpy库" class="headerlink" title="numpy库"></a>numpy库</h2><p>NumPy(Numerical Python) 是 Python 语言的一个扩展程序库，支持大量的维度数组与矩阵运算，此外也针对数组运算提供大量的数学函数库。NumPy 通常与 SciPy（Scientific Python）和 Matplotlib（绘图库）一起使用， 这种组合广泛用于替代 MatLab，是一个强大的科学计算环境。</p>
+<h3 id="numpy-roll-函数"><a href="#numpy-roll-函数" class="headerlink" title="numpy.roll()函数"></a>numpy.roll()函数</h3><p>先导入库，定义数组</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">x = np.arange(<span class="number">27</span>)       <span class="comment">#取 0-26 的元素数组</span></span><br><span class="line"></span><br><span class="line">x1 = reshape(x, (<span class="number">3</span>, <span class="number">3</span>, <span class="number">3</span>))<span class="comment">#整合成3×3×3的3维数组</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#沿i正方向滚动，x1[0,1,2][j][k]-&gt;x1[2,0,1][j][k]</span></span><br><span class="line">a_X = np.roll(x1, <span class="number">1</span>, axis=<span class="number">0</span>)    <span class="comment">#若为-1，向负方向滚动</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#沿j正方向滚动，x1[i][0,1,2][k]-&gt;x1[j][2,0,1][k]</span></span><br><span class="line">a_y = np.roll(x1, <span class="number">1</span>, axis=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#沿k正方向滚动，x1[i][j][0,1,2]-&gt;x1[j][k][2,0,1]</span></span><br><span class="line">a_z = np.roll(x1, <span class="number">1</span>, axis=<span class="number">2</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>这个函数在数组错位相减时起到了极大的作用，尤其是那种三维数组只变动其中一维的情况下，这样可以直接做整体差，而不用采用老办法的三次for循环，大大的减少了运算量。</p>
+<h2 id="应用与FDTD算法"><a href="#应用与FDTD算法" class="headerlink" title="应用与FDTD算法"></a>应用与FDTD算法</h2><p>应用于FDTD算法时，显示了其巨大的优越性。下面写部分代码：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#dx,dy,dz,dt,J都默认定义过了,且电磁波在电介质中传播</span></span><br><span class="line"><span class="comment">#FDTD求电场强度x轴分量Ex</span></span><br><span class="line">Chx = ((dt / dy) * (np.roll(Hz, <span class="number">1</span>, axis=<span class="number">1</span>) - Hz) - (dt / dz) * (np.roll(Hy, <span class="number">1</span>, axis=<span class="number">2</span>) - Hy))</span><br><span class="line"></span><br><span class="line">Chy = -((dt / dx) * (np.roll(Hz, <span class="number">1</span>, axis=<span class="number">0</span>) - Hz) - (dt / dz) * (np.roll(Hx, <span class="number">1</span>, axis=<span class="number">2</span>) - Hx))</span><br><span class="line"></span><br><span class="line">Chz =((dt / dx) * (np.roll(Hy, <span class="number">1</span>, axis=<span class="number">0</span>) - Hy) - (dt / dy) * (np.roll(Hx, <span class="number">1</span>, axis=<span class="number">1</span>) - Hx))</span><br><span class="line"></span><br><span class="line">Chx = np.multiply(<span class="number">1</span> / eps, Chx)</span><br><span class="line">Chy = np.multiply(<span class="number">1</span> / eps, Chy)</span><br><span class="line">Chz = np.multiply(<span class="number">1</span> / eps, Chz)</span><br><span class="line"></span><br><span class="line">Ex -= Chx</span><br><span class="line">Ey -= Chy</span><br><span class="line">Ez -= Chz</span><br><span class="line"></span><br><span class="line">Ez[jx, jy, jz] -= J;    <span class="comment"># 中心点赋源</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#FDTD求磁场强度x轴分量Ex</span></span><br><span class="line">Hx += ((dt / dy) * (Ez - np.roll(Ez, <span class="number">-1</span>, axis=<span class="number">1</span>)) - (dt / dz) * (Ey - np.roll(Ey, <span class="number">-1</span>, axis=<span class="number">2</span>)))</span><br><span class="line"></span><br><span class="line">Hy += -((dt / dx) * (Ez - np.roll(Ez, <span class="number">-1</span>, axis=<span class="number">0</span>)) - (dt / dz) * (Ex - np.roll(Ex, <span class="number">-1</span>, axis=<span class="number">2</span>)))</span><br><span class="line">    </span><br><span class="line">Hz += ((dt / dx) * (Ey - np.roll(Ey, <span class="number">-1</span>, axis=<span class="number">0</span>)) - (dt / dy) * (Ex - np.roll(Ex, <span class="number">-1</span>, axis=<span class="number">1</span>)))</span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>这里的电场正方向滚动、磁场的向负方向滚动，正好可以让两个边界面的值处于不正确，然后利用边界面条件更新边界面值。</p>
+</blockquote>
+<p>先存一张元胞图。<br><img src="https://cdn.jsdelivr.net/gh/flag-fly/cdn/img/2020-10-09-21-33-57.png" alt=""></p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='true'
+        data-ae='true'
+        data-ci='7f0bcdbef4489f682fb8'
+        data-cs='e389e53d9c5c35ad8947c140a7711163cb63e170'
+        data-r='gitalk'
+        data-o='flag-fly'
+        data-a='flag-fly'
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+        <div class='side'>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#python%E4%B8%AD%E6%95%B0%E7%BB%84%E8%AE%A1%E7%AE%97%E6%9C%89%E7%94%A8%E7%9A%84%E5%87%BD%E6%95%B0"><span class="toc-number">1.</span> <span class="toc-text">python中数组计算有用的函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#numpy%E5%BA%93"><span class="toc-number">1.1.</span> <span class="toc-text">numpy库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#numpy-roll-%E5%87%BD%E6%95%B0"><span class="toc-number">1.1.1.</span> <span class="toc-text">numpy.roll()函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E4%B8%8EFDTD%E7%AE%97%E6%B3%95"><span class="toc-number">1.2.</span> <span class="toc-text">应用与FDTD算法</span></a></li></ol></li></ol>	
+        </div>
+    
+</div>
+
+
+    </div>
+</div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+        tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
+        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+        messageStyle: "none"
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+
+</html>
