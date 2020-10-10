@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>国庆节的第二篇</title>
+    <url>/2020/10/03/Maxwell&#39;s%20equation/</url>
+    <content><![CDATA[<h1 id="国庆节的第五天"><a href="#国庆节的第五天" class="headerlink" title="国庆节的第五天"></a>国庆节的第五天</h1><p>今天看了许久麦克斯韦方程组，写点看到的东西。</p>
+<h2 id="广义麦克斯韦方程组"><a href="#广义麦克斯韦方程组" class="headerlink" title="广义麦克斯韦方程组"></a>广义麦克斯韦方程组</h2><p>先亮明麦克斯韦方程组：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\vec{\nabla} \cdot \vec{D} &=\rho \\
+\vec{\nabla} \cdot \vec{B} &=\rho_m \\
+\vec{\nabla} \times \vec{H} &=\vec{\jmath}+\frac{\partial \vec{D}}{\partial t} \\
+\vec{\nabla} \times \vec{E} &=-\vec{\jmath}_m-\frac{\partial \vec{B}}{\partial t}
+\end{aligned}</script><p>这里多出来的$\rho_m$、$J_m$ 是磁荷密度、磁流密度（假设存在），这是广义麦克斯韦方程组里面引入的一个概念，对应于电荷密度和电流密度，对于其是否存在，物理界现在还有争议，但是不妨碍我们引入电荷密度和磁流密度，因为这可以大大简化我们对电磁场的计算。广义麦克斯韦方程组存在明显的对称性，我们只需求出其中电场（磁场），那么对应的磁场（电场）也能由对称性得出。</p>
+<h2 id="对麦克斯韦旋度方程的思考"><a href="#对麦克斯韦旋度方程的思考" class="headerlink" title="对麦克斯韦旋度方程的思考"></a>对麦克斯韦旋度方程的思考</h2><p>我们知道，麦克斯韦的散度方程可以解释电场和磁场的部分特性，比如电场在$\rho$不等于0的时候可以解释成有源场，也就是说电场线有起点或者有终点，另一端延申至无穷。磁场的话暂时没有发现磁荷，故都是无源场，也就说，磁场线是闭合曲线，有始有终。  </p>
+<p> 其实啊，我觉得麦克斯韦的旋度方程更能体现电磁场的精髓，这两个方程很明显的体现了电生磁，磁生电的特性。并且，散度方程可以由这两个旋度方程推出了。这也就是说我们在求解电磁场的时候，可能只需要电场强度和磁场强度满足旋度方程就可以了。做一个简单的数学推导证明一下：</p>
+<script type="math/tex; mode=display">
+\vec{\nabla} \cdot {\vec{\nabla} \times \vec{H}} =\vec{\nabla} \cdot{\vec{\jmath}}+\vec{\nabla} \cdot{\frac{\partial \vec{D}}{\partial t}}</script><p>数学上我们很容易得知左边磁场强度旋度的散度为0，右边的算式第一项，用电流连续性原理可得：</p>
+<script type="math/tex; mode=display">
+\vec{\nabla} \cdot{\vec{\jmath}}=-\frac{\partial \vec{\rho}}{\partial t}</script><p>此时得到方程：</p>
+<script type="math/tex; mode=display">
+0=-\frac{\partial \vec{\rho}}{\partial t}+\frac{\partial \vec{\nabla} \cdot\vec{D}}{\partial t}</script><p>最后得到麦克斯韦散度方程：</p>
+<script type="math/tex; mode=display">
+\vec{\nabla} \cdot \vec{D} =\rho</script><p>另一个推导也是同理。这对我们之后运用计算机求解电磁场有着极大的意义，也就是说电场和磁场只需要满足两个旋度方程就可以求出场的分布。（当然，源和边界条件要知道）</p>
+<h1 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h1><p><strong>散度</strong>： $\nabla$ 与一个矢量函数点积的结果；</p>
+<script type="math/tex; mode=display">
+\nabla \cdot \vec{A}=\frac{\partial A_{x}}{\partial x}+\frac{\partial A_{y}}{\partial y}+\frac{\partial A_{z}}{\partial z}</script><p><strong>旋度</strong>： $\nabla$与一个矢量函数叉积的结果；</p>
+<script type="math/tex; mode=display">
+\nabla \times \vec{A}=\left|\begin{array}{ccc}
+\hat{i} & \hat{j} & \hat{k} \\
+\frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
+A_{x} & A_{y} & A_{z}
+\end{array}\right|</script><script type="math/tex; mode=display">
+\nabla \times \vec{A}=\left(\frac{\partial A_{z}}{\partial y}-\frac{\partial A_{y}}{\partial z}\right) \hat{i}-\left(\frac{\partial A_{z}}{\partial x}-\frac{\partial A_{x}}{\partial z}\right) \hat{j}+\left(\frac{\partial A_{y}}{\partial x}-\frac{\partial A_{x}}{\partial y}\right) \hat{k}</script><p>贴个图<br><img src="https://cdn.jsdelivr.net/gh/flag-fly/cdn/img/2020-10-05-21-15-11.png" alt=""></p>
+]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>-Maxwell equation</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>国庆节的开始</title>
+    <url>/2020/10/03/hardworking/</url>
+    <content><![CDATA[<h1 id="国庆节的开始"><a href="#国庆节的开始" class="headerlink" title="国庆节的开始"></a>国庆节的开始</h1><p><em>国庆与中秋的相遇，家与国碰了个满怀。</em></p>
+<p>上午难得的睡到了9点，自然醒的状态虽没有之前的生龙活虎，也算是储备好了一天的能量。<br>开始蹩脚的编程吧！</p>
+<ol>
+<li>感觉和教程说的不太一样</li>
+<li>咋没有自动生成标题<ol>
+<li>原来要加一个空格，不然识别不来</li>
+<li>这样啊，我可以了</li>
+</ol>
+</li>
+<li>标完序号记得空格一个数字。</li>
+</ol>
+<p>这个行间距怎么调呀？先不管了，插个图片试试</p>
+<p><img src="https://cdn.jsdelivr.net/gh/flag-fly/cdn/img/2020-10-03-17-21-15.png" alt=""></p>
+<p>在vscode上确实可以用快捷键ctrl+Alt+v粘贴上去了。(想要发布到hexo上还是需要加一个步骤，搞一个图床，详细步骤看<a href="https://sitoi.cn/posts/39161.html#%E7%94%9F%E6%88%90%E4%B8%80%E4%B8%AA-Token">这个大佬弄的</a>)</p>
+<p>再试一下公式编辑快不快，用神器，毕竟latex还没有学会:(hexo博客很多时候识别不了latex公式，可以看这个<a href="https://www.jianshu.com/p/68e6f82d88b7">教程</a>) </p>
+<script type="math/tex; mode=display">\lim_{x\to0}\frac{sin(x)}{x}=1</script><p>$\lim_{x\to\infty}x^{\frac{1}{x}}=?$这是内嵌公式。latex还是挺方便的，和手写公式一个逻辑，就是要记的命令多一些。</p>
+<p><strong>公式没有显示，记得多刷新几次页面</strong></p>
+<p>接下来写表格，据说会复杂一些。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">早上</th>
+<th style="text-align:center">中午</th>
+<th style="text-align:center">晚上</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">没吃饭，起的晚</td>
+<td style="text-align:center">多吃点，有点饿</td>
+<td style="text-align:center">吃🍔算了</td>
+</tr>
+<tr>
+<td style="text-align:center">表格好像不能固定大小，随着文字变化变化</td>
+<td style="text-align:center">这就离谱啊，不能确定大小吗？</td>
+<td style="text-align:center">这咋固定啊，就靠打字的数量吗？</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>还行吧，感觉不是很复杂。(经过昨天一天的试错，这个分割符一定要打好，边上要加就都加，不加就都不加。)</p>
+<p>加入链接试试，<a href="https://www.limfx.pro/ReadArticle/57/yi-zhong-xie-zuo-de-xin-fang-fa">学习的文章</a>；还行，不复杂。<br>接下来就代码块了，我也没啥代码，随便写两行😏。<br><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> s=<span class="number">1</span>;<span class="built_in">cout</span>&lt;&lt;s;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">s = <span class="string">&quot;Python syntax highlighting&quot;</span>;  </span><br><span class="line"><span class="keyword">print</span> s</span><br></pre></td></tr></table></figure>
+<hr>
+<blockquote>
+<p>注意Markdown没有什么字体类型、颜色、大小的设置，只有标题级别段落。所以说他是一内容为中心的写作方式。附赠一个markdown的语法完整<a href="http://xianbai.me/learn-md/article/extension/table.html">网站</a>。</p>
+</blockquote>
+<hr>
+<h2 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h2><p>这个博客的诞生离不开科大<a href="https://qzwangustc.github.io/">某王姓大佬</a>的一路扶持，再次感谢！长路漫漫，上下求索，在成长的岁月中，曾经陪你笑陪你愁的朋友，是一辈子都不会忘记的，愿彼此都能珍惜这份友谊，做个永远的朋友。学习无疑是辛苦的，有时甚至略显乏味，没有娱乐活动而有条理，没有同学间的嬉笑吵闹，一切都显得平静，但是最后能有所进步，能够看到更多的东西，能明白许多道理，这便是最好的。</p>
+]]></content>
+      <categories>
+        <category>-学习 -博客</category>
+      </categories>
+      <tags>
+        <tag>-hexo -Markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2020/10/02/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>working day</title>
+    <url>/2020/10/09/python_fdtd/</url>
+    <content><![CDATA[<h1 id="python中数组计算有用的函数"><a href="#python中数组计算有用的函数" class="headerlink" title="python中数组计算有用的函数"></a>python中数组计算有用的函数</h1><h2 id="numpy库"><a href="#numpy库" class="headerlink" title="numpy库"></a>numpy库</h2><p>NumPy(Numerical Python) 是 Python 语言的一个扩展程序库，支持大量的维度数组与矩阵运算，此外也针对数组运算提供大量的数学函数库。NumPy 通常与 SciPy（Scientific Python）和 Matplotlib（绘图库）一起使用， 这种组合广泛用于替代 MatLab，是一个强大的科学计算环境。</p>
+<h3 id="numpy-roll-函数"><a href="#numpy-roll-函数" class="headerlink" title="numpy.roll()函数"></a>numpy.roll()函数</h3><p>先导入库，定义数组</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">x = np.arange(<span class="number">27</span>)       <span class="comment">#取 0-26 的元素数组</span></span><br><span class="line"></span><br><span class="line">x1 = reshape(x, (<span class="number">3</span>, <span class="number">3</span>, <span class="number">3</span>))<span class="comment">#整合成3×3×3的3维数组</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#沿i正方向滚动，x1[0,1,2][j][k]-&gt;x1[2,0,1][j][k]</span></span><br><span class="line">a_X = np.roll(x1, <span class="number">1</span>, axis=<span class="number">0</span>)    <span class="comment">#若为-1，向负方向滚动</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#沿j正方向滚动，x1[i][0,1,2][k]-&gt;x1[j][2,0,1][k]</span></span><br><span class="line">a_y = np.roll(x1, <span class="number">1</span>, axis=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#沿k正方向滚动，x1[i][j][0,1,2]-&gt;x1[j][k][2,0,1]</span></span><br><span class="line">a_z = np.roll(x1, <span class="number">1</span>, axis=<span class="number">2</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>这个函数在数组错位相减时起到了极大的作用，尤其是那种三维数组只变动其中一维的情况下，这样可以直接做整体差，而不用采用老办法的三次for循环，大大的减少了运算量。</p>
+<h2 id="应用与FDTD算法"><a href="#应用与FDTD算法" class="headerlink" title="应用与FDTD算法"></a>应用与FDTD算法</h2><p>应用于FDTD算法时，显示了其巨大的优越性。下面写部分代码：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#dx,dy,dz,dt,J都默认定义过了,且电磁波在电介质中传播</span></span><br><span class="line"><span class="comment">#FDTD求电场强度x轴分量Ex</span></span><br><span class="line">Chx = ((dt / dy) * (np.roll(Hz, <span class="number">1</span>, axis=<span class="number">1</span>) - Hz) - (dt / dz) * (np.roll(Hy, <span class="number">1</span>, axis=<span class="number">2</span>) - Hy))</span><br><span class="line"></span><br><span class="line">Chy = -((dt / dx) * (np.roll(Hz, <span class="number">1</span>, axis=<span class="number">0</span>) - Hz) - (dt / dz) * (np.roll(Hx, <span class="number">1</span>, axis=<span class="number">2</span>) - Hx))</span><br><span class="line"></span><br><span class="line">Chz =((dt / dx) * (np.roll(Hy, <span class="number">1</span>, axis=<span class="number">0</span>) - Hy) - (dt / dy) * (np.roll(Hx, <span class="number">1</span>, axis=<span class="number">1</span>) - Hx))</span><br><span class="line"></span><br><span class="line">Chx = np.multiply(<span class="number">1</span> / eps, Chx)</span><br><span class="line">Chy = np.multiply(<span class="number">1</span> / eps, Chy)</span><br><span class="line">Chz = np.multiply(<span class="number">1</span> / eps, Chz)</span><br><span class="line"></span><br><span class="line">Ex -= Chx</span><br><span class="line">Ey -= Chy</span><br><span class="line">Ez -= Chz</span><br><span class="line"></span><br><span class="line">Ez[jx, jy, jz] -= J;    <span class="comment"># 中心点赋源</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#FDTD求磁场强度x轴分量Ex</span></span><br><span class="line">Hx += ((dt / dy) * (Ez - np.roll(Ez, <span class="number">-1</span>, axis=<span class="number">1</span>)) - (dt / dz) * (Ey - np.roll(Ey, <span class="number">-1</span>, axis=<span class="number">2</span>)))</span><br><span class="line"></span><br><span class="line">Hy += -((dt / dx) * (Ez - np.roll(Ez, <span class="number">-1</span>, axis=<span class="number">0</span>)) - (dt / dz) * (Ex - np.roll(Ex, <span class="number">-1</span>, axis=<span class="number">2</span>)))</span><br><span class="line">    </span><br><span class="line">Hz += ((dt / dx) * (Ey - np.roll(Ey, <span class="number">-1</span>, axis=<span class="number">0</span>)) - (dt / dy) * (Ex - np.roll(Ex, <span class="number">-1</span>, axis=<span class="number">1</span>)))</span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>这里的电场正方向滚动、磁场的向负方向滚动，正好可以让两个边界面的值处于不正确，然后利用边界面条件更新边界面值。</p>
+</blockquote>
+<p>先存一张元胞图。<br><img src="https://cdn.jsdelivr.net/gh/flag-fly/cdn/img/2020-10-09-21-33-57.png" alt=""></p>
+]]></content>
+      <categories>
+        <category>-学习 -技能</category>
+      </categories>
+      <tags>
+        <tag>-python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>“first”</title>
+    <url>/2020/10/03/%E2%80%9Cfirst%E2%80%9D/</url>
+    <content><![CDATA[<h1 id="开篇"><a href="#开篇" class="headerlink" title="开篇"></a>开篇</h1><p>调整一下博客布局</p>
+]]></content>
+      <categories>
+        <category>-其他</category>
+      </categories>
+      <tags>
+        <tag>-杂说</tag>
+      </tags>
+  </entry>
+</search>
