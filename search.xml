@@ -34,10 +34,10 @@ A_{x} & A_{y} & A_{z}
 \nabla \times \vec{A}=\left(\frac{\partial A_{z}}{\partial y}-\frac{\partial A_{y}}{\partial z}\right) \hat{i}-\left(\frac{\partial A_{z}}{\partial x}-\frac{\partial A_{x}}{\partial z}\right) \hat{j}+\left(\frac{\partial A_{y}}{\partial x}-\frac{\partial A_{x}}{\partial y}\right) \hat{k}</script><p>贴个图<br><img src="https://cdn.jsdelivr.net/gh/flag-fly/cdn/img/2020-10-05-21-15-11.png" alt=""></p>
 ]]></content>
       <categories>
-        <category>学习</category>
+        <category>麦克斯韦方程组</category>
       </categories>
       <tags>
-        <tag>-Maxwell equation</tag>
+        <tag>Maxwell equation</tag>
       </tags>
   </entry>
   <entry>
@@ -95,10 +95,10 @@ A_{x} & A_{y} & A_{z}
 <h2 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h2><p>这个博客的诞生离不开科大<a href="https://qzwangustc.github.io/">某王姓大佬</a>的一路扶持，再次感谢！长路漫漫，上下求索，在成长的岁月中，曾经陪你笑陪你愁的朋友，是一辈子都不会忘记的，愿彼此都能珍惜这份友谊，做个永远的朋友。学习无疑是辛苦的，有时甚至略显乏味，没有娱乐活动而有条理，没有同学间的嬉笑吵闹，一切都显得平静，但是最后能有所进步，能够看到更多的东西，能明白许多道理，这便是最好的。</p>
 ]]></content>
       <categories>
-        <category>-学习 -博客</category>
+        <category>学习博客</category>
       </categories>
       <tags>
-        <tag>-hexo -Markdown</tag>
+        <tag>hexo Markdown</tag>
       </tags>
   </entry>
   <entry>
@@ -129,10 +129,10 @@ A_{x} & A_{y} & A_{z}
 <p>先存一张元胞图。<br><img src="https://cdn.jsdelivr.net/gh/flag-fly/cdn/img/2020-10-09-21-33-57.png" alt=""></p>
 ]]></content>
       <categories>
-        <category>-学习 -技能</category>
+        <category>学习技能</category>
       </categories>
       <tags>
-        <tag>-python</tag>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -148,10 +148,10 @@ A_{x} & A_{y} & A_{z}
 <p>输出结果<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">array([[<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>],</span><br><span class="line">       [<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>]])</span><br></pre></td></tr></table></figure><br>此函数作用就是，将a0数组，复制2×3遍，形成矩阵。此函数已经不被推荐使用了。</p>
 ]]></content>
       <categories>
-        <category>-学习 -技能</category>
+        <category>学习技能</category>
       </categories>
       <tags>
-        <tag>-python</tag>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>

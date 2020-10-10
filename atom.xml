@@ -6,7 +6,7 @@
   <link href="https://flag-fly.github.io/atom.xml" rel="self"/>
   
   <link href="https://flag-fly.github.io/"/>
-  <updated>2020-10-10T13:18:00.837Z</updated>
+  <updated>2020-10-10T13:45:33.057Z</updated>
   <id>https://flag-fly.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://flag-fly.github.io/2020/10/10/python_numpy/"/>
     <id>https://flag-fly.github.io/2020/10/10/python_numpy/</id>
     <published>2020-10-10T13:15:44.000Z</published>
-    <updated>2020-10-10T13:18:00.837Z</updated>
+    <updated>2020-10-10T13:45:33.057Z</updated>
     
     
       
@@ -34,10 +34,10 @@
     
     
     
-    <category term="-学习 -技能" scheme="https://flag-fly.github.io/categories/%E5%AD%A6%E4%B9%A0-%E6%8A%80%E8%83%BD/"/>
+    <category term="学习技能" scheme="https://flag-fly.github.io/categories/%E5%AD%A6%E4%B9%A0%E6%8A%80%E8%83%BD/"/>
     
     
-    <category term="-python" scheme="https://flag-fly.github.io/tags/python/"/>
+    <category term="python" scheme="https://flag-fly.github.io/tags/python/"/>
     
   </entry>
   
@@ -46,7 +46,7 @@
     <link href="https://flag-fly.github.io/2020/10/09/python_fdtd/"/>
     <id>https://flag-fly.github.io/2020/10/09/python_fdtd/</id>
     <published>2020-10-09T13:55:44.000Z</published>
-    <updated>2020-10-10T01:11:49.223Z</updated>
+    <updated>2020-10-10T13:45:19.839Z</updated>
     
     
       
@@ -59,10 +59,10 @@
     
     
     
-    <category term="-学习 -技能" scheme="https://flag-fly.github.io/categories/%E5%AD%A6%E4%B9%A0-%E6%8A%80%E8%83%BD/"/>
+    <category term="学习技能" scheme="https://flag-fly.github.io/categories/%E5%AD%A6%E4%B9%A0%E6%8A%80%E8%83%BD/"/>
     
     
-    <category term="-python" scheme="https://flag-fly.github.io/tags/python/"/>
+    <category term="python" scheme="https://flag-fly.github.io/tags/python/"/>
     
   </entry>
   
@@ -71,7 +71,7 @@
     <link href="https://flag-fly.github.io/2020/10/03/Maxwell&#39;s%20equation/"/>
     <id>https://flag-fly.github.io/2020/10/03/Maxwell&#39;s%20equation/</id>
     <published>2020-10-03T03:55:44.000Z</published>
-    <updated>2020-10-10T01:11:14.903Z</updated>
+    <updated>2020-10-10T13:45:07.526Z</updated>
     
     
       
@@ -85,10 +85,10 @@
     
     
     
-    <category term="学习" scheme="https://flag-fly.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="麦克斯韦方程组" scheme="https://flag-fly.github.io/categories/%E9%BA%A6%E5%85%8B%E6%96%AF%E9%9F%A6%E6%96%B9%E7%A8%8B%E7%BB%84/"/>
     
     
-    <category term="-Maxwell equation" scheme="https://flag-fly.github.io/tags/Maxwell-equation/"/>
+    <category term="Maxwell equation" scheme="https://flag-fly.github.io/tags/Maxwell-equation/"/>
     
   </entry>
   
@@ -97,7 +97,7 @@
     <link href="https://flag-fly.github.io/2020/10/03/hardworking/"/>
     <id>https://flag-fly.github.io/2020/10/03/hardworking/</id>
     <published>2020-10-03T03:55:44.000Z</published>
-    <updated>2020-10-10T00:55:57.277Z</updated>
+    <updated>2020-10-10T13:44:28.583Z</updated>
     
     
       
@@ -110,10 +110,10 @@
     
     
     
-    <category term="-学习 -博客" scheme="https://flag-fly.github.io/categories/%E5%AD%A6%E4%B9%A0-%E5%8D%9A%E5%AE%A2/"/>
+    <category term="学习博客" scheme="https://flag-fly.github.io/categories/%E5%AD%A6%E4%B9%A0%E5%8D%9A%E5%AE%A2/"/>
     
     
-    <category term="-hexo -Markdown" scheme="https://flag-fly.github.io/tags/hexo-Markdown/"/>
+    <category term="hexo Markdown" scheme="https://flag-fly.github.io/tags/hexo-Markdown/"/>
     
   </entry>
   
