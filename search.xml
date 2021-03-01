@@ -92,7 +92,7 @@ A_{x} & A_{y} & A_{z}
 <p>注意Markdown没有什么字体类型、颜色、大小的设置，只有标题级别段落。所以说他是一内容为中心的写作方式。附赠一个markdown的语法完整<a href="http://xianbai.me/learn-md/article/extension/table.html">网站</a>。</p>
 </blockquote>
 <hr>
-<h2 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h2><p>这个博客的诞生离不开科大<a href="https://qzwangustc.github.io/">某王姓大佬</a>的一路扶持，再次感谢！长路漫漫，上下求索，在成长的岁月中，曾经陪你笑陪你愁的朋友，是一辈子都不会忘记的，愿彼此都能珍惜这份友谊，做个永远的朋友。学习无疑是辛苦的，有时甚至略显乏味，没有娱乐活动而有条理，没有同学间的嬉笑吵闹，一切都显得平静，但是最后能有所进步，能够看到更多的东西，能明白许多道理，这便是最好的。</p>
+<h2 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h2><p>这个博客的诞生离不开科大<a href="https://qzwangustc.github.io/">某王姓大佬</a>的一路扶持，再次感谢！长路漫漫，上下求索，在成长的岁月中，曾经陪你笑陪你愁的朋友，是一辈子都不会忘记的，愿彼此都能珍惜这份友谊，做个永远的朋友。学习无疑是辛苦的，有时甚至略显乏味，没有娱乐活动，没有同学间的嬉笑吵闹，一切都显得平静，但是最后能有所进步，能够看到更多的东西，能明白许多道理，这便是最好的。</p>
 ]]></content>
       <categories>
         <category>学习博客</category>
@@ -203,6 +203,126 @@ A_{x} & A_{y} & A_{z}
       </categories>
       <tags>
         <tag>read</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>工作准备</title>
+    <url>/2021/02/28/electrical-work/</url>
+    <content><![CDATA[<h1 id="buck、boost电路的对偶关系"><a href="#buck、boost电路的对偶关系" class="headerlink" title="buck、boost电路的对偶关系"></a>buck、boost电路的对偶关系</h1><p><em>为工作记，为电路通</em></p>
+<p>重温《电力电子技术》这本书，大方向就四个，DC-DC、DC-AC、AC-DC、AC-AC。此篇首先分析DC-DC电路，以buck电路为主，写一下所得所感。</p>
+<h2 id="Buck电路拓扑"><a href="#Buck电路拓扑" class="headerlink" title="Buck电路拓扑"></a>Buck电路拓扑</h2><p>Buck电路的拓扑图：<br><img src="https://cdn.jsdelivr.net/gh/flag-fly/cdn/img/20210228211443.png" alt=""></p>
+<p>buck电路利用的是一种斩波降压的思想，利用开关管持续开断的能力，调节分配三极管导通关断时间，以控制降压比。这个降压不是普通意义上不变直流，而是利用积分的思想，在一段时间内的平均电压。占空比，即在周期内导通的时间/周期；易知，降压比=占空比。</p>
+<p>细看拓扑图，电容C1是用来去除U0的纹波，毕竟我们希望输出电压的波形尽可能的平稳，而不产生电压脉动。只有滤波元件是远远不够的，开关管开断会产生突变的电压，而电容电压是不能突变，否则会产生巨大的电流，烧掉三极管。故在拓扑中又添加了缓冲元件，电感和二极管的加入，使得电容两端的电压不会突变，且在开断瞬间三极管的电流应力（应用中的电流与零件规格值的比值）被电感限制。又为了避免新加的电感两边电流突变而导致的过电压，加入续流二极管。</p>
+<h2 id="具体波形"><a href="#具体波形" class="headerlink" title="具体波形"></a>具体波形</h2><p><img src="https://cdn.jsdelivr.net/gh/flag-fly/cdn/img/20210228223010.png" alt=""></p>
+<p>理想情况下，电路中的电容电感在一个周期内获得的能量是0，也就是说在周期内吸收的能量和释放的能量相等。这就引出了<strong>伏秒平衡</strong>。</p>
+<p><strong>伏秒平衡</strong>：在稳态工作的开关电源中电感两端的正伏秒值等于负伏秒值。</p>
+<pre><code>    当开关电路稳定工作的时候，一个开关周期内的电感的电流变化量最终为0，即经过电感的电流增量和电感的电流减少量是相等。换句话说，在开关电路中，一个周期因开关作用被分为两段，其中一段时间内电感电流在增加，另一段时间内电感电流在减少，稳定状态下那么在一个开关周期内，电流的增加量与电流的减少量是相等。
+
+    即：ΔI_on＝ΔI_off即，电感在导通和关断时，其电流变化相等。比如说你打开开关给电感供电，然后又关闭开关，那经过电感的电流增量最终是0，增加的电流和减少的电流相等。这也算以一种稳态。
+
+    又因为：电感的电压公式 ：V＝L×di/dt=L×ΔI/ ΔT所以VΔT_on=VΔT_off，即伏秒平衡。电感不是耗能元件所以在平衡状态电感吸收和释放的能量是一致的，w=1/2*L*i*i，即电流的变化量是一致的，所以V*ΔT一致，从另一个角度看，也可以看出电感端电压越高，其电流上升越快，充电越快。
+</code></pre><h2 id="Boost电路"><a href="#Boost电路" class="headerlink" title="Boost电路"></a>Boost电路</h2><p><img src="https://cdn.jsdelivr.net/gh/flag-fly/cdn/img/20210301144441.png" alt=""><br>Boost其实可以由Buck型电流变换电路转变。先引入一个前提，电容、电感、三极管、二极管都没有损耗，则输出功率就等于输入功率，降压电路也就意味着是升流电路，再将这个电流源，用电压源串电感的形式进行替代，就转变成升压电路，去除冗余，则成为Boost电路。</p>
+<p>分析Buck电流型变换电路。考虑对偶的形式，输入电压源串三极管转变为输入电流源并三极管，接下来就是在输出串滤波电感，滤除电流纹波。在输出和输入直接加入缓存单元。原来的缓冲单元是并二极管，串电感，现在变成串二极管，并电容。从结构到元件上都有一种对偶关系。这就实现了降流电路。</p>
+<p>考虑到boost升压电路，是电压-电压，输入的电流源用电压源串大电感替换（开关频率也得满足条件），输出边的滤波电感就不需要了，电压纹波由并联的电容滤除了。由伏秒平衡求得升压比=1/1-D；</p>
+]]></content>
+      <categories>
+        <category>电力电子技术</category>
+      </categories>
+      <tags>
+        <tag>principle</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>工作准备</title>
+    <url>/2021/03/01/dldz-tp/</url>
+    <content><![CDATA[<h1 id="开关电源拓扑的优缺点对比"><a href="#开关电源拓扑的优缺点对比" class="headerlink" title="开关电源拓扑的优缺点对比"></a>开关电源拓扑的优缺点对比</h1><h3 id="基本的脉冲宽度调制波形"><a href="#基本的脉冲宽度调制波形" class="headerlink" title="基本的脉冲宽度调制波形"></a>基本的脉冲宽度调制波形</h3><p>基本的脉冲宽度调制波形定义如下：<br><img src="https://cdn.jsdelivr.net/gh/flag-fly/cdn/img/20210301165827.png" alt=""></p>
+<h3 id="Buck降压"><a href="#Buck降压" class="headerlink" title="Buck降压"></a>Buck降压</h3><p><img src="https://cdn.jsdelivr.net/gh/flag-fly/cdn/img/20210301165918.png" alt=""><br>特点</p>
+<p>■ 把输入降至一个较低的电压。</p>
+<p>■ 可能是最简单的电路。</p>
+<p>■ 电感/电容滤波器滤平开关后的方波。</p>
+<p>■ 输出总是小于或等于输入。</p>
+<p>■ 输入电流不连续 (斩波)。</p>
+<p>■ 输出电流平滑。</p>
+<h3 id="Boost升压"><a href="#Boost升压" class="headerlink" title="Boost升压"></a>Boost升压</h3><p><img src="https://cdn.jsdelivr.net/gh/flag-fly/cdn/img/20210301170042.png" alt=""><br>特点</p>
+<p>■ 把输入升至一个较高的电压。</p>
+<p>■ 与降压一样，但重新安排了电感、开关和二极管。</p>
+<p>■ 输出总是比大于或等于输入(忽略二极管的正向压降)。</p>
+<p>■ 输入电流平滑。</p>
+<p>■ 输出电流不连续 (斩波)。</p>
+<h3 id="Buck-Boost降压-升压"><a href="#Buck-Boost降压-升压" class="headerlink" title="Buck-Boost降压-升压"></a>Buck-Boost降压-升压</h3><p><img src="https://cdn.jsdelivr.net/gh/flag-fly/cdn/img/20210301170129.png" alt=""><br>特点</p>
+<p>■ 电感、开关和二极管的另一种安排方法。</p>
+<p>■ 结合了降压和升压电路的缺点。</p>
+<p>■ 输入电流不连续 (斩波)。</p>
+<p>■ 输出电流也不连续 (斩波)。</p>
+<p>■ 输出总是与输入反向 (注意电容的极性)，但是幅度可以小于或大于输入。</p>
+<p>■ “反激”变换器实际是降压-升压电路隔离(变压器耦合)形式。</p>
+<h3 id="Flyback反激"><a href="#Flyback反激" class="headerlink" title="Flyback反激"></a>Flyback反激</h3><p><img src="https://cdn.jsdelivr.net/gh/flag-fly/cdn/img/20210301172808.png" alt=""><br>V_out=D/[(n=1/2)<em>(1-D)]</em>V_in;<br>特点</p>
+<p>■ 如降压-升压电路一样工作，但是电感有两个绕组，而且同时作为变压器和电感。</p>
+<p>■ 输出可以为正或为负，由线圈和二极管的极性决定。</p>
+<p>■ 输出电压可以大于或小于输入电压，由变压器的匝数比决定。</p>
+<p>■ 这是隔离拓扑结构中最简单的</p>
+<p>■ 增加次级绕组和电路可以得到多个输出。</p>
+<p>此处初级电感很低，用于确定峰值电流和存储的能量。当初级开关断开时，能量传送到次级。</p>
+<h3 id="Forward正激"><a href="#Forward正激" class="headerlink" title="Forward正激"></a>Forward正激</h3><p><img src="https://cdn.jsdelivr.net/gh/flag-fly/cdn/img/20210301170235.png" alt=""><br>特点</p>
+<p>■ 降压电路的变压器耦合形式。</p>
+<p>■ 不连续的输入电流，平滑的输出电流。</p>
+<p>■ 因为采用变压器，输出可以大于或小于输入，可以是任何极性。</p>
+<p>■ 增加次级绕组和电路可以获得多个输出。</p>
+<p>■ 在每个开关周期中必须对变压器磁芯去磁。常用的做法是增加一个与初级绕组匝数相同的绕组。</p>
+<p>■ 在开关接通阶段存储在初级电感中的能量，在开关断开阶段通过另外的绕组和二极管释放。</p>
+<h3 id="Two-Transistor-Forward双晶体管正激"><a href="#Two-Transistor-Forward双晶体管正激" class="headerlink" title="Two-Transistor Forward双晶体管正激"></a>Two-Transistor Forward双晶体管正激</h3><p><img src="https://cdn.jsdelivr.net/gh/flag-fly/cdn/img/20210301173309.png" alt=""><br>特点</p>
+<p>■ 两个开关同时工作。</p>
+<p>■ 开关断开时，存储在变压器中的能量使初级的极性反向，使二极管导通。</p>
+<p>■ 主要优点：</p>
+<p>■ 每个开关上的电压永远不会超过输入电压。</p>
+<p>■ 无需对绕组磁道复位。</p>
+<p>■ 初级电感很高，因为无需存储能量。</p>
+<p>■ 磁化电流 (i1) 流入 “磁化电感”，使磁芯在初级开关断开后去磁 (电压反向)。</p>
+<h3 id="Push-Pull推挽"><a href="#Push-Pull推挽" class="headerlink" title="Push-Pull推挽"></a>Push-Pull推挽</h3><p><img src="https://cdn.jsdelivr.net/gh/flag-fly/cdn/img/20210301170346.png" alt=""><br>特点</p>
+<p>■ 开关(FET)的驱动不同相，进行脉冲宽度调制(PWM)以调节输出电压。</p>
+<p>■ 良好的变压器磁芯利用率—-在两个半周期中都传输功率。</p>
+<p>■ 全波拓扑结构,所以输出纹波频率是变压器频率的两倍。</p>
+<p>■ 施加在FET上的电压是输入电压的两倍。</p>
+<h3 id="Half-Bridge半桥"><a href="#Half-Bridge半桥" class="headerlink" title="Half-Bridge半桥"></a>Half-Bridge半桥</h3><p><img src="https://cdn.jsdelivr.net/gh/flag-fly/cdn/img/20210301170418.png" alt=""><br>特点</p>
+<p>■ 较高功率变换器极为常用的拓扑结构。</p>
+<p>■ 开关(FET)的驱动不同相，进行脉冲宽度调制(PWM)以调节输出电压。</p>
+<p>■ 良好的变压器磁芯利用率—-在两个半周期中都传输功率。而且初级绕组的利用率优于推挽电路。</p>
+<p>■ 全波拓扑结构,所以输出纹波频率是变压器频率的两倍。</p>
+<p>■ 施加在FET上的电压与输入电压相等。</p>
+<h3 id="Full-Bridge全桥"><a href="#Full-Bridge全桥" class="headerlink" title="Full-Bridge全桥"></a>Full-Bridge全桥</h3><p><img src="https://cdn.jsdelivr.net/gh/flag-fly/cdn/img/20210301170452.png" alt=""><br>特点</p>
+<p>■ 较高功率变换器最为常用的拓扑结构。</p>
+<p>■ 开关(FET)以对角对的形式驱动，进行脉冲宽度调制(PWM)以调节输出电压。</p>
+<p>■ 良好的变压器磁芯利用率—-在两个半周期中都传输功率</p>
+<p>■ 全波拓扑结构，所以输出纹波频率是变压器频率的两倍。</p>
+<p>■ 施加在 FETs上的电压与输入电压相等。</p>
+<p>■ 在给定的功率下，初级电流是半桥的一半。</p>
+<h3 id="SEPIC单端初级电感变换器"><a href="#SEPIC单端初级电感变换器" class="headerlink" title="SEPIC单端初级电感变换器"></a>SEPIC单端初级电感变换器</h3><p><img src="https://cdn.jsdelivr.net/gh/flag-fly/cdn/img/20210301170600.png" alt=""><br>特点</p>
+<p>■ 输出电压可以大于或小于输入电压。</p>
+<p>■ 与升压电路一样，输入电流平滑，但是输出电流不连续。</p>
+<p>■ 能量通过电容从输入传输至输出。</p>
+<p>■ 需要两个电感。</p>
+<h3 id="Cuk电路"><a href="#Cuk电路" class="headerlink" title="Cuk电路"></a>Cuk电路</h3><p><img src="https://cdn.jsdelivr.net/gh/flag-fly/cdn/img/20210301170643.png" alt=""><br>特点</p>
+<p>■ 输出反相</p>
+<p>■ 输出电压的幅度可以大于或小于输入。</p>
+<p>■ 输入电流和输出电流都是平滑的。</p>
+<p>■ 能量通过电容从输入传输至输出。</p>
+<p>■ 需要两个电感。</p>
+<p>■ 电感可以耦合获得零纹波电感电流。</p>
+<h3 id="电路工作的细节"><a href="#电路工作的细节" class="headerlink" title="电路工作的细节"></a>电路工作的细节</h3><p>BUCK电路连续、临界、断续导电，以电感的电流为标准。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>还有许多拓扑结构，但大多是此处所述拓扑的组合或变形。<br>■ 每种拓扑结构包含独特的设计权衡：</p>
+<p>施加在开关上的电压</p>
+<p>斩波和平滑输入输出电流</p>
+<p>绕组的利用率</p>
+<p>■ 选择最佳的拓扑结构需要研究：</p>
+<p>输入和输出电压范围</p>
+<p>电流范围</p>
+<p>成本和性能、大小和重量之比<br>引<a href="https://zhuanlan.zhihu.com/p/44892426">知乎的教程</a> ；后续再细补。</p>
+]]></content>
+      <categories>
+        <category>电力电子技术</category>
+      </categories>
+      <tags>
+        <tag>topological graph</tag>
       </tags>
   </entry>
 </search>

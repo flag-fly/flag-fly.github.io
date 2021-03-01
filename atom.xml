@@ -6,7 +6,7 @@
   <link href="https://flag-fly.github.io/atom.xml" rel="self"/>
   
   <link href="https://flag-fly.github.io/"/>
-  <updated>2021-02-02T13:10:05.150Z</updated>
+  <updated>2021-03-01T09:39:11.655Z</updated>
   <id>https://flag-fly.github.io/</id>
   
   <author>
@@ -15,6 +15,56 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>工作准备</title>
+    <link href="https://flag-fly.github.io/2021/03/01/dldz-tp/"/>
+    <id>https://flag-fly.github.io/2021/03/01/dldz-tp/</id>
+    <published>2021-03-01T07:15:44.000Z</published>
+    <updated>2021-03-01T09:39:11.655Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;开关电源拓扑的优缺点对比&quot;&gt;&lt;a href=&quot;#开关电源拓扑的优缺点对比&quot; class=&quot;headerlink&quot; title=&quot;开关电源拓扑的优缺点对比&quot;&gt;&lt;/a&gt;开关电源拓扑的优缺点对比&lt;/h1&gt;&lt;h3 id=&quot;基本的脉冲宽度调制波形&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="电力电子技术" scheme="https://flag-fly.github.io/categories/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="topological graph" scheme="https://flag-fly.github.io/tags/topological-graph/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>工作准备</title>
+    <link href="https://flag-fly.github.io/2021/02/28/electrical-work/"/>
+    <id>https://flag-fly.github.io/2021/02/28/electrical-work/</id>
+    <published>2021-02-28T03:15:44.000Z</published>
+    <updated>2021-03-01T08:45:58.240Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;buck、boost电路的对偶关系&quot;&gt;&lt;a href=&quot;#buck、boost电路的对偶关系&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="电力电子技术" scheme="https://flag-fly.github.io/categories/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="principle" scheme="https://flag-fly.github.io/tags/principle/"/>
+    
+  </entry>
   
   <entry>
     <title>读书笔记</title>
@@ -147,7 +197,7 @@
     <link href="https://flag-fly.github.io/2020/10/03/hardworking/"/>
     <id>https://flag-fly.github.io/2020/10/03/hardworking/</id>
     <published>2020-10-03T03:55:44.000Z</published>
-    <updated>2020-10-10T13:44:28.583Z</updated>
+    <updated>2021-03-01T06:33:05.233Z</updated>
     
     
       
